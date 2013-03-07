@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <header>
+        <nav class="top-bar">
+            <div class="right">
+                <ul id="menu" class="right">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>
+                        @Html.Partial("_LoginPartial")
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="row">
+        <div class="content">
+            <div class="row">
+                <div class="eight columns centered">
+                    <h1>Photo Gallery Demo</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="eight columns centered"></div>
+            </div>
+            <div id="body">
+                @RenderSection("featured", required: false)
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="row">
+            <p>&copy; @DateTime.Now.Year - Safenet Consulting, Inc.</p>
+        </div>
+    </footer>
+    @Styles.Render("~/Content/photoswipe/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/foundation")
+
+    @Styles.Render("~/Content/css")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
