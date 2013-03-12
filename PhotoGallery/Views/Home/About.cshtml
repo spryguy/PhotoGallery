@@ -84,13 +84,7 @@
         
         function showImage(obj, photoSwipe) {
             var e = $(obj).attr('index');
-            var a = photoSwipe.activeInstances[0];
-            
-            //if ($(this).data('name')) {
-            //    alert('Clickin\' again so soon, ' + $(this).data('name') + '?');
-            //} else {
-            //    $(this).data('name', prompt('Hey good lookin\', what\'s your name?', ''));
-            //}
+            photoSwipe.activeInstances[0].instance.carousel.show(e);
         }
     </script>
 }

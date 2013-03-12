@@ -8,15 +8,17 @@
 
     <script type="text/javascript">
 
-        (function (window, $, PhotoSwipe) {
+        (function (window, $, photoSwipe) {
             $(document).ready(function () {
                 var options = {
                     preventHide: true,
                     backButtonHideEnabled: true
                 };
                 $("#Gallery a").photoSwipe(options);
+                photoSwipe.show(0);
+                //photoSwipe.activeInstances[0].instance.carousel.show(0);
             });
-        }(window, window.jQuery, window.Code.photoSwipe));
+        }(window, window.jQuery, window.Code.PhotoSwipe));
 
     </script>
 }
