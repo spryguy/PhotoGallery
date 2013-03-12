@@ -10,7 +10,10 @@
 
         (function (window, $, PhotoSwipe) {
             $(document).ready(function () {
-                var options = {};
+                var options = {
+                    preventHide: true,
+                    backButtonHideEnabled: true
+                };
                 $("#Gallery a").photoSwipe(options);
             });
         }(window, window.jQuery, window.Code.photoSwipe));
@@ -21,7 +24,7 @@
     <div class="twelve columns centered">
         <div>stuff and things above the gallery</div>
 
-        <ul id="Gallery" class="gallery">
+        <ul id="Gallery" class="small-block-grid-2 large-block-grid-4 gallery">
             <li><a href="@Url.Content("~/images/full/001.jpg")">
                 <img src="@Url.Content("~/images/thumb/001.jpg")" alt="Image 001" /></a></li>
             <li><a href="images/full/002.jpg">
