@@ -20,7 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <JSLintSkip>\Scripts\foundation\app.js|\Scripts\foundation\foundation.min.js|\Scripts\foundation\jquery.foundation.accordion.js|\Scripts\foundation\jquery.foundation.alerts.js|\Scripts\foundation\jquery.foundation.buttons.js|\Scripts\foundation\jquery.foundation.clearing.js|\Scripts\foundation\jquery.foundation.forms.js|\Scripts\foundation\jquery.foundation.joyride.js|\Scripts\foundation\jquery.foundation.magellan.js|\Scripts\foundation\jquery.foundation.mediaQueryToggle.js|\Scripts\foundation\jquery.foundation.navigation.js|\Scripts\foundation\jquery.foundation.orbit.js|\Scripts\foundation\jquery.foundation.reveal.js|\Scripts\foundation\jquery.foundation.tabs.js|\Scripts\foundation\jquery.foundation.tooltips.js|\Scripts\foundation\jquery.foundation.topbar.js|\Scripts\foundation\jquery.placeholder.js|\Scripts\foundation\modernizr.foundation.js|\Scripts\jquery-1.8.2.intellisense.js|\Scripts\jquery-1.8.2.js|\Scripts\jquery-1.8.2.min.js|\Scripts\jquery-ui-1.9.2.js|\Scripts\jquery-ui-1.9.2.min.js|\Scripts\jquery.unobtrusive-ajax.js|\Scripts\jquery.unobtrusive-ajax.min.js|\Scripts\jquery.validate-vsdoc.js|\Scripts\jquery.validate.js|\Scripts\jquery.validate.min.js|\Scripts\jquery.validate.unobtrusive.js|\Scripts\jquery.validate.unobtrusive.min.js|\Scripts\knockout-2.2.0.debug.js|\Scripts\knockout-2.2.0.js|\Scripts\modernizr-2.6.2.js|\Content\photoswipe\code.photoswipe-3.0.5.js|\Content\photoswipe\code.photoswipe-3.0.5.min.js|\Content\photoswipe\code.photoswipe.jquery-3.0.5.js|\Content\photoswipe\code.photoswipe.jquery-3.0.5.min.js|\Content\photoswipe\klass.min.js</JSLintSkip>
+    <JSLintSkip>\Scripts\foundation\app.js|\Scripts\foundation\foundation.min.js|\Scripts\foundation\jquery.foundation.accordion.js|\Scripts\foundation\jquery.foundation.alerts.js|\Scripts\foundation\jquery.foundation.buttons.js|\Scripts\foundation\jquery.foundation.clearing.js|\Scripts\foundation\jquery.foundation.forms.js|\Scripts\foundation\jquery.foundation.joyride.js|\Scripts\foundation\jquery.foundation.magellan.js|\Scripts\foundation\jquery.foundation.mediaQueryToggle.js|\Scripts\foundation\jquery.foundation.navigation.js|\Scripts\foundation\jquery.foundation.orbit.js|\Scripts\foundation\jquery.foundation.reveal.js|\Scripts\foundation\jquery.foundation.tabs.js|\Scripts\foundation\jquery.foundation.tooltips.js|\Scripts\foundation\jquery.foundation.topbar.js|\Scripts\foundation\jquery.placeholder.js|\Scripts\foundation\modernizr.foundation.js|\Scripts\jquery-1.8.2.intellisense.js|\Scripts\jquery-1.8.2.js|\Scripts\jquery-1.8.2.min.js|\Scripts\jquery-ui-1.9.2.js|\Scripts\jquery-ui-1.9.2.min.js|\Scripts\jquery.unobtrusive-ajax.js|\Scripts\jquery.unobtrusive-ajax.min.js|\Scripts\jquery.validate-vsdoc.js|\Scripts\jquery.validate.js|\Scripts\jquery.validate.min.js|\Scripts\jquery.validate.unobtrusive.js|\Scripts\jquery.validate.unobtrusive.min.js|\Scripts\knockout-2.2.0.debug.js|\Scripts\knockout-2.2.0.js|\Scripts\modernizr-2.6.2.js|\Content\photoswipe\code.photoswipe-3.0.5.js|\Content\photoswipe\code.photoswipe-3.0.5.min.js|\Content\photoswipe\code.photoswipe.jquery-3.0.5.js|\Content\photoswipe\code.photoswipe.jquery-3.0.5.min.js|\Content\photoswipe\klass.min.js|\Scripts\jquery.elastislide.js|\Scripts\jquerypp.custom.js|\Scripts\modernizr.custom.17475.js</JSLintSkip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -215,6 +215,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\demo.css" />
+    <Content Include="Content\elastislide.css" />
     <Content Include="Content\foundation\app.css" />
     <Content Include="Content\foundation\foundation.css" />
     <Content Include="Content\foundation\foundation.mvc.css" />
@@ -304,6 +307,8 @@
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="humans.txt" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\black_denim.png" />
     <Content Include="Images\Full\001.jpg" />
     <Content Include="Images\Full\002.jpg" />
     <Content Include="Images\Full\003.jpg" />
@@ -324,6 +329,9 @@
     <Content Include="Images\Full\018.jpg" />
     <Content Include="Images\Full\019.jpg" />
     <Content Include="Images\Full\020.jpg" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\loading_dark.gif" />
+    <Content Include="Images\nav.png" />
     <Content Include="Images\Thumb\001.jpg" />
     <Content Include="Images\Thumb\002.jpg" />
     <Content Include="Images\Thumb\003.jpg" />
@@ -368,15 +376,18 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.min.js" />
+    <Content Include="Scripts\jquery.elastislide.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquerypp.custom.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr.custom.17475.js" />
     <Content Include="Views\Examples\01-default.html" />
     <Content Include="Views\Examples\02-jquery.html" />
     <Content Include="Views\Examples\03-multiple-image-sets.html" />
@@ -479,6 +490,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_Foundation.cshtml" />
     <Content Include="Views\Home\Foundation_Index.cshtml" />
+    <Content Include="Views\Home\FilmStrip.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

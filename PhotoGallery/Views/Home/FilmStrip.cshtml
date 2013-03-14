@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "FilmStrip";
+}
+@section scripts{
+    
+    <script src="@Url.Content("~/Content/photoswipe/klass.min.js")"></script>
+    <script src="@Url.Content("~/Content/photoswipe/code.photoswipe-3.0.5.min.js")"></script>
+    <script src="@Url.Content("~/Content/photoswipe/code.photoswipe.jquery-3.0.5.min.js")"></script>
+
+    <script type="text/javascript">
+        $('#film').elastislide({
+            minItems: 2,
+            imageW: 100,
+            onClick: null
+        });
+        $(window).append('<div style="background-color:red;height:50px;width:100%;">hello im a big red bar</div>');
+        (function (window, $, photoSwipe) {
+            $(document).ready(function () {
+                var options = {
+                    captionAndToolbarAutoHideDelay: 0,
+                    target : window
+                };
+                $("#Gallery a").photoSwipe(options);
+
+            });
+        }(window, window.jQuery, window.Code.PhotoSwipe));
+
+    </script>
+}
+<div class="fixed-bar">
+            <ul id="film" class="elastislide-list">
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/001.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/002.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/003.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/004.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/005.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/006.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/007.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/008.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/009.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/010.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/011.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/012.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/013.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/014.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/015.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/016.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/017.jpg")" alt="Image 001" /></a></li>
+                <li><a href="#"><img src="@Url.Content("~/images/thumb/018.jpg")" alt="Image 001" /></a></li>
+            </ul>
+        </div>
+<div class="row">
+    <div class="twelve columns centered">
+        <div>stuff and things above the gallery</div>
+
+        <ul id="Gallery" class="gallery">
+            <li><a href="@Url.Content("~/images/full/001.jpg")">
+                <img src="@Url.Content("~/images/thumb/001.jpg")" alt="Image 001" /></a></li>
+            <li><a href="@Url.Content("~/images/full/002.jpg")">
+                <img src="@Url.Content("~/images/thumb/002.jpg")" alt="Image 002" /></a></li>
+            <li><a href="@Url.Content("~/images/full/003.jpg")">
+                <img src="@Url.Content("~/images/thumb/003.jpg")" alt="Image 003" /></a></li>
+            <li><a href="@Url.Content("~/images/full/004.jpg")">
+                <img src="@Url.Content("~/images/thumb/004.jpg")" alt="Image 004" /></a></li>
+            <li><a href="@Url.Content("~/images/full/005.jpg")">
+                <img src="@Url.Content("~/images/thumb/005.jpg")" alt="Image 005" /></a></li>
+            <li><a href="@Url.Content("~/images/full/006.jpg")">
+                <img src="@Url.Content("~/images/thumb/006.jpg")" alt="Image 006" /></a></li>
+            <li><a href="@Url.Content("~/images/full/007.jpg")">
+                <img src="@Url.Content("~/images/thumb/007.jpg")" alt="Image 007" /></a></li>
+            <li><a href="@Url.Content("~/images/full/008.jpg")">
+                <img src="@Url.Content("~/images/thumb/008.jpg")" alt="Image 008" /></a></li>
+            <li><a href="@Url.Content("~/images/full/009.jpg")">
+                <img src="@Url.Content("~/images/thumb/009.jpg")" alt="Image 009" /></a></li>
+            <li><a href="@Url.Content("~/images/full/010.jpg")">
+                <img src="@Url.Content("~/images/thumb/010.jpg")" alt="Image 010" /></a></li>
+            <li><a href="@Url.Content("~/images/full/011.jpg")">
+                <img src="@Url.Content("~/images/thumb/011.jpg")" alt="Image 011" /></a></li>
+            <li><a href="@Url.Content("~/images/full/012.jpg")">
+                <img src="@Url.Content("~/images/thumb/012.jpg")" alt="Image 012" /></a></li>
+            <li><a href="@Url.Content("~/images/full/013.jpg")">
+                <img src="@Url.Content("~/images/thumb/013.jpg")" alt="Image 013" /></a></li>
+            <li><a href="@Url.Content("~/images/full/014.jpg")">
+                <img src="@Url.Content("~/images/thumb/014.jpg")" alt="Image 014" /></a></li>
+            <li><a href="@Url.Content("~/images/full/015.jpg")">
+                <img src="@Url.Content("~/images/thumb/015.jpg")" alt="Image 015" /></a></li>
+            <li><a href="@Url.Content("~/images/full/016.jpg")">
+                <img src="@Url.Content("~/images/thumb/016.jpg")" alt="Image 016" /></a></li>
+            <li><a href="@Url.Content("~/images/full/017.jpg")">
+                <img src="@Url.Content("~/images/thumb/017.jpg")" alt="Image 017" /></a></li>
+            <li><a href="@Url.Content("~/images/full/018.jpg")">
+                <img src="@Url.Content("~/images/thumb/018.jpg")" alt="Image 018" /></a></li>
+        </ul>
+        
+
+        
+
+    </div>
+</div>

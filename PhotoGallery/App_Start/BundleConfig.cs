@@ -49,13 +49,19 @@ namespace PhotoGallery
             bundles.Add(new StyleBundle("~/Content/photoswipe/css").Include(
                        "~/Content/photoswipe/photoswipe.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/photoswipe").Include(
-                        "~/Content/photoswipe/klass.min.js",
-                        "~/Content/photoswipe/code.photoswipe-3.0.5.min.js",
-                        "~/Content/photoswipe/code.photoswipe.jquery-3.0.5.min.js"));
+           
             //custom
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css",
-    "~/Content/StyleSheet1.css"));
+            bundles.Add(new ScriptBundle("~/bundles/elastislide").Include(
+                //"~/Scripts/jquerypp.custom.js",
+                "~/Scripts/jquery.elastislide.js"
+                ));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(//"~/Content/site.css",
+                            "~/Content/StyleSheet1.css",
+                            "~/Content/elastislide.css"//,
+                            //"~/Content/demo.css",
+                            //"~/Content/custom.css"
+                            ));
 
         }
     }

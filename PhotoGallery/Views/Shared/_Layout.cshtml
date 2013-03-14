@@ -4,8 +4,11 @@
     <meta charset="utf-8" />
     <title>@ViewBag.Title - My ASP.NET MVC Application</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width" />
-
+    @*<meta name="viewport" content="width=device-width" />*@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+     @Styles.Render("~/Content/foundation/css")
+    @Styles.Render("~/Content/photoswipe/css")
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -14,8 +17,9 @@
         <nav class="top-bar">
             <div class="right">
                 <ul id="menu" class="right">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Default", "Index", "Home")</li>
+                    <li>@Html.ActionLink("indicators", "About", "Home")</li>
+                    <li>@Html.ActionLink("Filmstrip", "FilmStrip", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>
                         @Html.Partial("_LoginPartial")
@@ -40,17 +44,20 @@
             </div>
         </div>
     </div>
+    
     <footer>
         <div class="row">
             <p>&copy; @DateTime.Now.Year - Safenet Consulting, Inc.</p>
         </div>
     </footer>
-    @Styles.Render("~/Content/foundation/css")
-    @Styles.Render("~/Content/photoswipe/css")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/foundation")
+    @Scripts.Render("~/bundles/elastislide")
+    @*<script type="text/javascript" src="/Scripts/jquerypp.custom.js"></script>
+		<script type="text/javascript" src="/Scripts/jquery.elastislide.js"></script>*@
+    
+    
 
-    @Styles.Render("~/Content/css")
     @RenderSection("scripts", required: false)
 </body>
 </html>
