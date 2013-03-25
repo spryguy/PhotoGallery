@@ -119,9 +119,7 @@
                     indicators[e.index].setAttribute('class', 'current');
 
                 });
-
-                //Util.DOM.appendto('<div>what the fuck just happended</div>');
-
+                
                 instance.show(0);
 
             });
@@ -140,7 +138,7 @@
 
         function showImage(obj, photoSwipe) {
             var e = $(obj).attr('index');
-            photoSwipe.activeInstances[0].instance.carousel.show(e);
+            photoSwipe.show(e);
         }
     </script>
 }

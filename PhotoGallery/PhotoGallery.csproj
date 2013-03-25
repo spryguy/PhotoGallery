@@ -21,6 +21,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <JSLintSkip>\Scripts\foundation\app.js|\Scripts\foundation\foundation.min.js|\Scripts\foundation\jquery.foundation.accordion.js|\Scripts\foundation\jquery.foundation.alerts.js|\Scripts\foundation\jquery.foundation.buttons.js|\Scripts\foundation\jquery.foundation.clearing.js|\Scripts\foundation\jquery.foundation.forms.js|\Scripts\foundation\jquery.foundation.joyride.js|\Scripts\foundation\jquery.foundation.magellan.js|\Scripts\foundation\jquery.foundation.mediaQueryToggle.js|\Scripts\foundation\jquery.foundation.navigation.js|\Scripts\foundation\jquery.foundation.orbit.js|\Scripts\foundation\jquery.foundation.reveal.js|\Scripts\foundation\jquery.foundation.tabs.js|\Scripts\foundation\jquery.foundation.tooltips.js|\Scripts\foundation\jquery.foundation.topbar.js|\Scripts\foundation\jquery.placeholder.js|\Scripts\foundation\modernizr.foundation.js|\Scripts\jquery-1.8.2.intellisense.js|\Scripts\jquery-1.8.2.js|\Scripts\jquery-1.8.2.min.js|\Scripts\jquery-ui-1.9.2.js|\Scripts\jquery-ui-1.9.2.min.js|\Scripts\jquery.unobtrusive-ajax.js|\Scripts\jquery.unobtrusive-ajax.min.js|\Scripts\jquery.validate-vsdoc.js|\Scripts\jquery.validate.js|\Scripts\jquery.validate.min.js|\Scripts\jquery.validate.unobtrusive.js|\Scripts\jquery.validate.unobtrusive.min.js|\Scripts\knockout-2.2.0.debug.js|\Scripts\knockout-2.2.0.js|\Scripts\modernizr-2.6.2.js|\Content\photoswipe\code.photoswipe-3.0.5.js|\Content\photoswipe\code.photoswipe-3.0.5.min.js|\Content\photoswipe\code.photoswipe.jquery-3.0.5.js|\Content\photoswipe\code.photoswipe.jquery-3.0.5.min.js|\Content\photoswipe\klass.min.js|\Scripts\jquery.elastislide.js|\Scripts\jquerypp.custom.js|\Scripts\modernizr.custom.17475.js</JSLintSkip>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,30 +42,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FubuCore, Version=0.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="HtmlTags, Version=1.2.0.150, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.6\lib\net35\FubuCore.dll</HintPath>
-    </Reference>
-    <Reference Include="FubuMVC.Core, Version=0.4.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.6\lib\net35\FubuMVC.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="FubuMVC.UI, Version=0.4.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.6\lib\net35\FubuMVC.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlTags, Version=0.4.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.6\lib\net35\HtmlTags.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlTags.Extensions">
-      <HintPath>..\..\..\Downloads\HtmlTags.Extensions-master\HtmlTags.Extensions-master\src\HtmlTags.Extensions\bin\Debug\HtmlTags.Extensions.dll</HintPath>
+      <HintPath>..\packages\HtmlTags.1.2.0.150\lib\4.0\HtmlTags.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -211,6 +194,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlTags\Extensions\AnchorTag.cs" />
+    <Compile Include="HtmlTags\Foundation\Foundation3.cs" />
+    <Compile Include="HtmlTags\Extensions\ImageTag.cs" />
+    <Compile Include="Helpers\PhotoGalleryHelper.cs" />
+    <Compile Include="HtmlTags\Extensions\ScriptTag.cs" />
+    <Compile Include="HtmlTags\Extensions\StyleLink.cs" />
+    <Compile Include="HtmlTags\Extensions\Tags.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -499,6 +489,9 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -527,6 +520,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

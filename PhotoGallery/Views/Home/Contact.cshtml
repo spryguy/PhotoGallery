@@ -1,50 +1,29 @@
-﻿@{
+﻿@using PhotoGallery.Helpers
+
+@{
     ViewBag.Title = "Contact";
 }
-
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
-</hgroup>
-
-<section class="contact">
-    <header>
-        <h3>Phone</h3>
-    </header>
-    <p>
-        <span class="label">Main:</span>
-        <span>425.555.0100</span>
-    </p>
-    <p>
-        <span class="label">After Hours:</span>
-        <span>425.555.0199</span>
-    </p>
-</section>
-
-<section class="contact">
-    <header>
-        <h3>Email</h3>
-    </header>
-    <p>
-        <span class="label">Support:</span>
-        <span><a href="mailto:Support@example.com">Support@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">Marketing:</span>
-        <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">General:</span>
-        <span><a href="mailto:General@example.com">General@example.com</a></span>
-    </p>
-</section>
-
-<section class="contact">
-    <header>
-        <h3>Address</h3>
-    </header>
-    <p>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399
-    </p>
-</section>
+@{
+    var images = new List<Image>
+        {
+            new Image {Url = "../images/full/001.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 001"},
+            new Image {Url = "../images/full/002.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 002"},
+            new Image {Url = "../images/full/003.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 003"},
+            new Image {Url = "../images/full/004.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 004"},
+            new Image {Url = "../images/full/005.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 005"},
+            new Image {Url = "../images/full/006.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 006"},
+            new Image {Url = "../images/full/007.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 007"},
+            new Image {Url = "../images/full/008.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 008"},
+            new Image {Url = "../images/full/009.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 009"},
+            new Image {Url = "../images/full/010.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 010"},
+            new Image {Url = "../images/full/011.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 011"},
+            new Image {Url = "../images/full/012.jpg", ThumbnailUrl = "../images/full/001.jpg", Caption = "Image 012"},
+            new Image {Url = "../images/full/013.jpg", Caption = "Image 013"},
+            new Image {Url = "../images/full/014.jpg", Caption = "Image 014"},
+            new Image {Url = "../images/full/015.jpg", Caption = "Image 015"},
+            new Image {Url = "../images/full/016.jpg", Caption = "Image 016"},
+            new Image {Url = "../images/full/017.jpg", Caption = "Image 017"},
+            new Image {Url = "../images/full/018.jpg", Caption = "Image 018"}
+        };
+}
+@Html.PhotoGallery(images)
