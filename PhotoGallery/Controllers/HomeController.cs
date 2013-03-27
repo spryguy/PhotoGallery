@@ -29,7 +29,7 @@ namespace PhotoGallery.Controllers
             return View();
         }
 
-        public ActionResult FilmStrip()
+        public ActionResult Featured()
         {
             return View();
         }

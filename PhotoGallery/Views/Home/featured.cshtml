@@ -1,0 +1,54 @@
+﻿@using PhotoGallery.Helpers
+@{
+    ViewBag.Title = "FilmStrip";
+}
+@{
+    var features = new List<FetauredItem>
+        {
+            new FetauredItem {Url = "../images/full/001.jpg", ThumbnailUrl = "../images/full/001.jpg", Description = "Image 001"},
+            new FetauredItem {Url = "../images/full/002.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 002"},
+            new FetauredItem {Url = "../images/full/003.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 003"},
+            new FetauredItem {Url = "../images/full/004.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 004"},
+            new FetauredItem {Url = "../images/full/005.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 005"},
+            new FetauredItem {Url = "../images/full/006.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 006"},
+            new FetauredItem {Url = "../images/full/007.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 007"},
+            new FetauredItem {Url = "../images/full/008.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 008"},
+            new FetauredItem {Url = "../images/full/009.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 009"},
+            new FetauredItem {Url = "../images/full/010.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 010"},
+            new FetauredItem {Url = "../images/full/011.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 011"},
+            new FetauredItem {Url = "../images/full/012.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 012"},
+            new FetauredItem {Url = "../images/full/013.jpg", Price = "$1,000,000", Description = "Image 013"},
+            new FetauredItem {Url = "../images/full/014.jpg", Price = "$1,000,000", Description = "Image 014"},
+            new FetauredItem {Url = "../images/full/015.jpg", Price = "$1,000,000", Description = "Image 015"},
+            new FetauredItem {Url = "../images/full/016.jpg", Price = "$1,000,000", Description = "Image 016"},
+            new FetauredItem {Url = "../images/full/017.jpg", Price = "$1,000,000", Description = "Image 017"},
+            new FetauredItem {Url = "../images/full/018.jpg", Price = "$1,000,000", Description = "Image 018"}
+        };
+}
+
+@section scripts{
+    <!-- FlexSlider -->
+    
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/flex/jquery.flexslider.js")"></script>
+    <link href="@Url.Content("~/Content/flex/flexslider.css")" rel="stylesheet">
+
+<script type="text/javascript">
+
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            animationLoop: true,
+            itemWidth: 75,
+            itemMargin: 5,
+            minItems: 4,
+            maxItems: 8,
+            start: function (slider) {
+                $('body').removeClass('loading');
+            }
+        });
+    });
+</script>
+}
+
+@Html.FeatureSlider(features)
