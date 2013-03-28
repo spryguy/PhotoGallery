@@ -7,7 +7,7 @@
     margin: 0 auto;
 }
 
-/*.gallery {
+.gallery {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -37,10 +37,10 @@
             width: 100%;
             height: auto;
         }
-    */
+    
 
 /* For inline examples only */
-/*
+
 #PhotoSwipeTarget {
     width: 100%;
     height: 200px;
@@ -74,10 +74,80 @@
 #Indicators span.current {
     background: #EEBF02;
     border: 1px solid #EEBF02;
-}*/
+}
 
-ul[data-clearing].block-grid > li { height: 120px; overflow: hidden; }
+/*-----------------*/
+ul[data-clearing].block-grid {
+    padding: 20px;
+}
 
-ul[data-clearing].block-grid > li img { height: auto; width: 100%; max-width: 1000px; }
-.block-grid > li { display: block; height: auto; float: left;margin-left: auto !important; }
-.clearing-close { z-index: 999; position: absolute; top: 80px; right: 20px; font-size: 30px; line-height: 1; color: white; display: none; }
+ul[data-clearing].block-grid > li {
+    height: 180px;
+    overflow: hidden;
+    text-align: center; /*horizontally center*/
+    border: 2px solid transparent;
+}
+
+ul[data-clearing].block-grid > li img:before,
+ul[data-clearing].block-grid > li img {
+    height: auto;
+    max-width: none; /* reset - foundation screws this up*/
+    /* vertically center the image */
+    display: inline-block;
+    vertical-align: middle;
+    /* removes(sorta) image from the flow */
+    margin: -999em -100%;
+}
+
+.block-grid > li {
+    display: block;
+    height: auto;
+    float: left;
+    margin-left: auto !important;
+}
+
+.clearing-close {
+    z-index: 999;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    font-size: 30px;
+    line-height: 1;
+    color: white;
+    display: none;
+}
+
+/*-------------*/
+.flexslider .slides > li {
+   overflow: hidden;
+   text-align: center; /*horizontally center*/
+   position: relative;
+   border: 1px solid transparent;
+    height: auto;
+    
+}
+.flexslider .slides > li > div{
+    display: block;
+}
+.flexslider .slides img:before,
+.flexslider .slides img {
+    height: auto;
+    max-height: none;
+    
+    max-width: none;
+    text-align: center;
+    
+    display: inline-block;
+    vertical-align: middle;
+}
+
+    /*width: auto;
+    max-width: none;
+    max-height: 80%;
+    text-align: center;
+    
+    display: inline-block;
+    vertical-align: middle;
+    
+    margin: -999em -100%;
+    height: auto;*/

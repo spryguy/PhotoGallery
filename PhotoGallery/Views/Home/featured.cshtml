@@ -32,6 +32,7 @@
 
     <script type="text/javascript" src="@Url.Content("~/Scripts/flex/jquery.flexslider.js")"></script>
     <link href="@Url.Content("~/Content/flex/flexslider.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/StyleSheet1.css")" rel="stylesheet">
 
 <script type="text/javascript">
 
@@ -39,9 +40,9 @@
         $('.flexslider').flexslider({
             animation: "slide",
             animationLoop: true,
-            itemWidth: 75,
+            itemWidth: 205,
             itemMargin: 5,
-            minItems: 4,
+            minItems: 1,
             maxItems: 8,
             start: function (slider) {
                 $('body').removeClass('loading');

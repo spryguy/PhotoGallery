@@ -24,11 +24,11 @@ namespace PhotoGallery.Helpers
             foreach (var item in items)
             {
                 ul.Append(Tags.ListItem.Append(
-                    new HtmlTag("span").Text(item.Description)
+                    new HtmlTag("div").Text(item.Description)
                               )
                               .Append(new AnchorTag().Href(item.Url, new ImageTag(item.Url, item.Description, true))
                               )
-                              .Append(new HtmlTag("span").Text(item.Price)
+                              .Append(new HtmlTag("div").Text(item.Price)
                               )
                     );
             }

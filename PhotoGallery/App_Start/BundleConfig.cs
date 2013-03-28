@@ -57,10 +57,9 @@ namespace PhotoGallery
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(//"~/Content/site.css",
+                //"~/Content/flex/flexslider.css",
                             "~/Content/StyleSheet1.css",
-                            "~/Content/elastislide.css"//,
-                            //"~/Content/demo.css",
-                            //"~/Content/custom.css"
+                            "~/Content/elastislide.css"
                             ));
 
         }

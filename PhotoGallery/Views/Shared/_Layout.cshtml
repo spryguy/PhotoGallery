@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
      @Styles.Render("~/Content/foundation/css")
     @Styles.Render("~/Content/photoswipe/css")
-    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -55,7 +54,7 @@
 		<script type="text/javascript" src="/Scripts/jquery.elastislide.js"></script>*@
     
     
-
+    @Styles.Render("~/Content/css")
     @RenderSection("scripts", required: false)
 </body>
 </html>

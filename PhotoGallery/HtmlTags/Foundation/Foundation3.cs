@@ -40,7 +40,7 @@ namespace HtmlTags.Foundation
 
         public static string GetBlockGridColumnsCss(int numColumns, int numMobile = 0)
         {
-            return string.Format("{0} {1}-up mobile-{2}-up", Classes.BlockGrid, Numbers[numColumns], Numbers[numColumns]);
+            return string.Format("{0} {1}-up mobile-{2}-up", Classes.BlockGrid, Numbers[numColumns], Numbers[numMobile]);
         }
     }
 }
