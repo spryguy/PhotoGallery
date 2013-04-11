@@ -393,8 +393,8 @@
           if (fade) {
             // SMOOTH HEIGHT:
             methods.smoothHeight();
-          } else if (carousel) { //CAROUSEL:
-            slider.slides.width(slider.computedW);
+          } else if (carousel) { //CAROUSEL:              
+            //slider.slides.width(slider.computedW);
             slider.update(slider.pagingCount);
             slider.setProps();
           }
@@ -597,23 +597,23 @@
 
     // SLIDE:
     slider.setProps = function(pos, special, dur) {
-      var target = (function() {
-        var posCheck = (pos) ? pos : ((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo,
-            posCalc = (function() {
-              if (carousel) {
-                return (special === "setTouch") ? pos :
-                       (reverse && slider.animatingTo === slider.last) ? 0 :
-                       (reverse) ? slider.limit - (((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo) :
-                       (slider.animatingTo === slider.last) ? slider.limit : posCheck;
-              } else {
-                switch (special) {
-                  case "setTotal": return (reverse) ? ((slider.count - 1) - slider.currentSlide + slider.cloneOffset) * pos : (slider.currentSlide + slider.cloneOffset) * pos;
-                  case "setTouch": return (reverse) ? pos : pos;
-                  case "jumpEnd": return (reverse) ? pos : slider.count * pos;
-                  case "jumpStart": return (reverse) ? slider.count * pos : pos;
-                  default: return pos;
+        var target = (function () {
+            var posCheck = (pos) ? pos : ((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo,
+            posCalc = (function () {
+                if (carousel) {
+                    return (special === "setTouch") ? pos :
+                           (reverse && slider.animatingTo === slider.last) ? 0 :
+                           (reverse) ? slider.limit - (((slider.itemW + vars.itemMargin) * slider.move) * slider.animatingTo) :
+                           (slider.animatingTo === slider.last) ? slider.limit : posCheck;
+                } else {
+                    switch (special) {
+                        case "setTotal": return (reverse) ? ((slider.count - 1) - slider.currentSlide + slider.cloneOffset) * pos : (slider.currentSlide + slider.cloneOffset) * pos;
+                        case "setTouch": return (reverse) ? pos : pos;
+                        case "jumpEnd": return (reverse) ? pos : slider.count * pos;
+                        case "jumpStart": return (reverse) ? slider.count * pos : pos;
+                        default: return pos;
+                    }
                 }
-              }
             }());
             return (posCalc * -1) + "px";
           }());
@@ -666,11 +666,11 @@
             slider.setProps(sliderOffset * slider.h, "init");
           }, (type === "init") ? 100 : 0);
         } else {
-          slider.container.width((slider.count + slider.cloneCount) * 200 + "%");
+            slider.container.width((slider.count + slider.cloneCount) * 200 + "%");
           slider.setProps(sliderOffset * slider.computedW, "init");
           setTimeout(function(){
             slider.doMath();
-            slider.newSlides.css({"width": slider.computedW, "float": "left", "display": "block"});
+            slider.newSlides.css({"width": slider.computedW, "float": "left", "display": "block" });
             // SMOOTH HEIGHT:
             if (vars.smoothHeight) methods.smoothHeight();
           }, (type === "init") ? 100 : 0);

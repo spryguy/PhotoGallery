@@ -118,36 +118,26 @@ ul[data-clearing].block-grid > li img {
 }
 
 /*-------------*/
+
 .flexslider .slides > li {
-   overflow: hidden;
-   text-align: center; /*horizontally center*/
-   position: relative;
-   border: 1px solid transparent;
-    height: auto;
-    
-}
-.flexslider .slides > li > div{
     display: block;
-}
-.flexslider .slides img:before,
-.flexslider .slides img {
-    height: auto;
-    max-height: none;
-    
-    max-width: none;
     text-align: center;
-    
-    display: inline-block;
-    vertical-align: middle;
+
 }
 
-    /*width: auto;
-    max-width: none;
-    max-height: 80%;
-    text-align: center;
+
+.flexslider .slides img,
+.flexslider .slides > li > div{
     
     display: inline-block;
-    vertical-align: middle;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.flexslider .slides img:before,
+.flexslider .slides img {
     
-    margin: -999em -100%;
-    height: auto;*/
+    width: auto;
+    max-height: 200px;
+    
+}

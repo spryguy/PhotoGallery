@@ -3,26 +3,27 @@
     ViewBag.Title = "FilmStrip";
 }
 @{
-    var features = new List<FetauredItem>
+    var rand = new Random();
+    var features = new List<FetauredInventory>
         {
-            new FetauredItem {Url = "../images/full/001.jpg", ThumbnailUrl = "../images/full/001.jpg", Description = "Image 001"},
-            new FetauredItem {Url = "../images/full/002.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 002"},
-            new FetauredItem {Url = "../images/full/003.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 003"},
-            new FetauredItem {Url = "../images/full/004.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 004"},
-            new FetauredItem {Url = "../images/full/005.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 005"},
-            new FetauredItem {Url = "../images/full/006.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 006"},
-            new FetauredItem {Url = "../images/full/007.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 007"},
-            new FetauredItem {Url = "../images/full/008.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 008"},
-            new FetauredItem {Url = "../images/full/009.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 009"},
-            new FetauredItem {Url = "../images/full/010.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 010"},
-            new FetauredItem {Url = "../images/full/011.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 011"},
-            new FetauredItem {Url = "../images/full/012.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = "$1,000,000", Description = "Image 012"},
-            new FetauredItem {Url = "../images/full/013.jpg", Price = "$1,000,000", Description = "Image 013"},
-            new FetauredItem {Url = "../images/full/014.jpg", Price = "$1,000,000", Description = "Image 014"},
-            new FetauredItem {Url = "../images/full/015.jpg", Price = "$1,000,000", Description = "Image 015"},
-            new FetauredItem {Url = "../images/full/016.jpg", Price = "$1,000,000", Description = "Image 016"},
-            new FetauredItem {Url = "../images/full/017.jpg", Price = "$1,000,000", Description = "Image 017"},
-            new FetauredItem {Url = "../images/full/018.jpg", Price = "$1,000,000", Description = "Image 018"}
+            new FetauredInventory {Url = "../images/full/001.jpg", ThumbnailUrl = "../images/full/001.jpg", Description = "Image 001"},
+            new FetauredInventory {Url = "../images/full/002.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 002"},
+            new FetauredInventory {Url = "../images/full/003.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 003"},
+            new FetauredInventory {Url = "../images/full/004.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 004"},
+            new FetauredInventory {Url = "../images/full/005.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 005"},
+            new FetauredInventory {Url = "../images/full/006.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 006"},
+            new FetauredInventory {Url = "../images/full/007.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 007"},
+            new FetauredInventory {Url = "../images/full/008.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 008"},
+            new FetauredInventory {Url = "../images/full/009.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 009"},
+            new FetauredInventory {Url = "../images/full/010.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 010"},
+            new FetauredInventory {Url = "../images/full/011.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 011"},
+            new FetauredInventory {Url = "../images/full/012.jpg", ThumbnailUrl = "../images/full/001.jpg", Price = rand.Next(), Description = "Image 012"},
+            new FetauredInventory {Url = "../images/full/013.jpg", Price = rand.Next(), Description = "Image 013"},
+            new FetauredInventory {Url = "../images/full/014.jpg", Price = rand.Next(), Description = "Image 014"},
+            new FetauredInventory {Url = "../images/full/015.jpg", Price = rand.Next(), Description = "Image 015"},
+            new FetauredInventory {Url = "../images/full/016.jpg", Price = rand.Next(), Description = "Image 016"},
+            new FetauredInventory {Url = "../images/full/017.jpg", Price = rand.Next(), Description = "Image 017"},
+            new FetauredInventory {Url = "../images/full/018.jpg", Price = rand.Next(), Description = "Image 018"}
         };
 }
 
@@ -36,19 +37,23 @@
 
 <script type="text/javascript">
 
+    // tiny helper function to add breakpoints
+    function getGridSize() {
+        return (window.innerWidth < 600) ? 2 :
+               (window.innerWidth < 900) ? 3 : 4;
+    }
+    
     $(window).load(function () {
         $('.flexslider').flexslider({
             animation: "slide",
             animationLoop: true,
-            itemWidth: 205,
-            itemMargin: 5,
-            minItems: 1,
-            maxItems: 8,
-            start: function (slider) {
-                $('body').removeClass('loading');
-            }
+            itemWidth: 310,
+            itemMargin: 5//,
+            //minItems: getGridSize(), // use function to pull in initial value
+            //maxItems: getGridSize() // use function to pull in initial value
         });
     });
+    
 </script>
 }
 

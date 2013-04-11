@@ -1,4 +1,6 @@
-﻿namespace HtmlTags.Extensions
+﻿using System;
+
+namespace HtmlTags.Extensions
 {
     public class ImageTag : HtmlTag
     {

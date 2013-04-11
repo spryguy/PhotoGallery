@@ -20,6 +20,10 @@ namespace HtmlTags.Extensions
             return this;
         }
 
+        public AnchorTag Href(Uri address, HtmlTag innerTag)
+        {
+            return Href(address.ToString(), innerTag);
+        }
         public AnchorTag Href(string address, HtmlTag innerTag)
         {
             Attr("href", address);
