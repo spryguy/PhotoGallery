@@ -29,13 +29,15 @@ namespace PhotoGallery.Helpers
             {
                 var container = Tags.Div;
                 container.Append(
-                    Tags.Div.Text(item.Description)
-                    )
-                         .Append(
+                        Tags.Div.Append(
                              new AnchorTag().Href(item.Url, new ImageTag(item.Url, item.Description, true))
+                        )
                     )
-                         .Append(
-                             Tags.Div.Text(item.Price.ToString("C"))
+                    .Append(
+                        Tags.Div.Text(item.Description)
+                    )
+                    .Append(
+                        Tags.Div.Text(item.Price.ToString("C"))
                     );
 
                 ul.Append(Tags.ListItem.Append(container));

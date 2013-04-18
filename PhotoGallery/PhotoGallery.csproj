@@ -297,6 +297,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Foundation_readme.txt" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\flex\jquery.flexslider.min.js">
+      <DependentUpon>jquery.flexslider.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\flex\jquery.flexslider.min.js.map">
+      <DependentUpon>jquery.flexslider.js</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="humans.txt" />
     <Content Include="Images\bg.jpg" />
