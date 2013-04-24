@@ -1,0 +1,173 @@
+﻿.calendar {
+    width: 100%;
+}
+
+.calendar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    clear: both;
+    width: 100%;
+}
+
+.calendar ul.month {
+    padding: 0 30px;
+}
+
+
+.calendar li {
+    display: block;
+    float: left;
+    overflow: visible!important;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    padding: 5px;
+    width: 14.2857142857%;
+    border: 1px solid #ccc;
+}
+
+.calendar ul.month-browser li {
+    width: 33.3%;
+    padding: 0;
+    border: 0;
+    text-align: center;
+    text-transform: uppercase;
+    height: auto;
+    margin: 20px 0;
+}
+
+.calendar ul.weekdays {
+    height: 40px;
+}
+
+.calendar ul.weekdays li {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 20px;
+    border: none!important;
+    padding: 10px 6px;
+    color: #666;
+    font-size: 13px;
+}
+
+.calendar li.filler {
+    background-color: #F5F5F5;
+    color: #ccc;
+}
+
+.calendar .month li {
+    background-color: #fff;
+}
+
+.calendar .month li:last-child {
+    margin-bottom: 10px!important;
+}
+
+.calendar li .day-name, .calendar li .month-name {
+    display: none;
+}
+
+.day > time {
+    display: block;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.day > article {
+    display: block;
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+    color: #666;
+    line-height: 14px;
+    background: #e4f2f2;
+    border: 1px solid #b5dbdc;
+    color: #009aaf;
+    text-decoration: none;
+}
+
+.day > article:hover .event-text {
+    display: block;
+}
+
+.day > article .event-title {
+    text-decoration: underline;
+}
+
+.day > article .event-time, .event-text {
+    color: #666;
+    margin-top: 2px;
+    text-decoration: none;
+}
+    
+.calendar .event-text {
+    display: none;
+}
+
+.calendar .empty {
+    display: block;
+}
+
+
+@media only screen and (max-width:768px) {
+    .calendar ul.month-browser li {
+        font-size: 12px;
+    }
+
+    .calendar ul {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .calendar .weekdays { 
+        display: none;  
+    }
+
+    .calendar li {
+        display: block;
+        height: auto!important;
+        border: 1px solid #ededed;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-bottom: -1px;
+        max-height: 100px!important;
+        overflow: hidden;
+    }
+
+    .calendar li .day-name, .calendar li .month-name {
+        display: inline;
+    }
+
+    .day > time {
+        text-align: center;
+    }
+
+    .day > article .event-title {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .day > article .event-text, .day > article .event-time, .day > article:hover .event-text, .day > article:hover .event-time {
+        display: inline;
+    }
+
+    .calendar li.filler, .calendar li.empty {
+        display: none;
+    }
+
+    .calendar .month li:last-child {
+    margin-bottom: 10px!important;
+}
+}
+
+@media only screen and (device-width:768px) and (device-height:1024px) and (orientation:landscape) {
+    .day > article .event-text, .day > article .event-time, .day > article:hover .event-text, .day > article:hover .event-time {
+        display: inline;
+    }
+}

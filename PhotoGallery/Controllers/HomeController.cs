@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using PhotoGallery.Extensions;
 
 namespace PhotoGallery.Controllers
 {
@@ -33,5 +35,18 @@ namespace PhotoGallery.Controllers
         {
             return View();
         }
+
+        public ActionResult EventsMock()
+        {
+
+            return View();
+        }
+
+        public ActionResult Events()
+        {
+            
+            return View();
+        }
+
     }
 }

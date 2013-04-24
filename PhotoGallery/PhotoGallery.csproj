@@ -20,7 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <JSLintSkip>\Scripts\foundation\app.js|\Scripts\foundation\foundation.min.js|\Scripts\foundation\jquery.foundation.accordion.js|\Scripts\foundation\jquery.foundation.alerts.js|\Scripts\foundation\jquery.foundation.buttons.js|\Scripts\foundation\jquery.foundation.clearing.js|\Scripts\foundation\jquery.foundation.forms.js|\Scripts\foundation\jquery.foundation.joyride.js|\Scripts\foundation\jquery.foundation.magellan.js|\Scripts\foundation\jquery.foundation.mediaQueryToggle.js|\Scripts\foundation\jquery.foundation.navigation.js|\Scripts\foundation\jquery.foundation.orbit.js|\Scripts\foundation\jquery.foundation.reveal.js|\Scripts\foundation\jquery.foundation.tabs.js|\Scripts\foundation\jquery.foundation.tooltips.js|\Scripts\foundation\jquery.foundation.topbar.js|\Scripts\foundation\jquery.placeholder.js|\Scripts\foundation\modernizr.foundation.js|\Content\photoswipe\code.photoswipe-3.0.5.js|\Content\photoswipe\code.photoswipe-3.0.5.min.js|\Content\photoswipe\code.photoswipe.jquery-3.0.5.js|\Content\photoswipe\code.photoswipe.jquery-3.0.5.min.js|\Content\photoswipe\klass.min.js|\Scripts\jquery-1.8.2.intellisense.js|\Scripts\jquery-1.8.2.js|\Scripts\jquery-1.8.2.min.js|\Scripts\jquery-ui-1.9.2.js|\Scripts\jquery-ui-1.9.2.min.js|\Scripts\jquery.elastislide.js|\Scripts\jquery.unobtrusive-ajax.js|\Scripts\jquery.unobtrusive-ajax.min.js|\Scripts\jquery.validate-vsdoc.js|\Scripts\jquery.validate.js|\Scripts\jquery.validate.min.js|\Scripts\jquery.validate.unobtrusive.js|\Scripts\jquery.validate.unobtrusive.min.js|\Scripts\jquerypp.custom.js|\Scripts\knockout-2.2.0.debug.js|\Scripts\knockout-2.2.0.js|\Scripts\modernizr-2.6.2.js|\Scripts\modernizr.custom.17475.js</JSLintSkip>
+    <JSLintSkip>\Scripts\foundation\app.js|\Scripts\foundation\foundation.min.js|\Scripts\foundation\jquery.foundation.accordion.js|\Scripts\foundation\jquery.foundation.alerts.js|\Scripts\foundation\jquery.foundation.buttons.js|\Scripts\foundation\jquery.foundation.clearing.js|\Scripts\foundation\jquery.foundation.forms.js|\Scripts\foundation\jquery.foundation.joyride.js|\Scripts\foundation\jquery.foundation.magellan.js|\Scripts\foundation\jquery.foundation.mediaQueryToggle.js|\Scripts\foundation\jquery.foundation.navigation.js|\Scripts\foundation\jquery.foundation.orbit.js|\Scripts\foundation\jquery.foundation.reveal.js|\Scripts\foundation\jquery.foundation.tabs.js|\Scripts\foundation\jquery.foundation.tooltips.js|\Scripts\foundation\jquery.foundation.topbar.js|\Scripts\foundation\jquery.placeholder.js|\Scripts\foundation\modernizr.foundation.js|\Content\photoswipe\code.photoswipe-3.0.5.js|\Content\photoswipe\code.photoswipe-3.0.5.min.js|\Content\photoswipe\code.photoswipe.jquery-3.0.5.js|\Content\photoswipe\code.photoswipe.jquery-3.0.5.min.js|\Content\photoswipe\klass.min.js|\Scripts\jquery-1.8.2.intellisense.js|\Scripts\jquery-1.8.2.js|\Scripts\jquery-1.8.2.min.js|\Scripts\jquery-ui-1.9.2.js|\Scripts\jquery-ui-1.9.2.min.js|\Scripts\jquery.elastislide.js|\Scripts\jquery.unobtrusive-ajax.js|\Scripts\jquery.unobtrusive-ajax.min.js|\Scripts\jquery.validate-vsdoc.js|\Scripts\jquery.validate.js|\Scripts\jquery.validate.min.js|\Scripts\jquery.validate.unobtrusive.js|\Scripts\jquery.validate.unobtrusive.min.js|\Scripts\jquerypp.custom.js|\Scripts\knockout-2.2.0.debug.js|\Scripts\knockout-2.2.0.js|\Scripts\modernizr-2.6.2.js|\Scripts\modernizr.custom.17475.js|\Scripts\jquery.equalheights.js</JSLintSkip>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -32,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -190,12 +191,15 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\EventCalendarHelper.cs" />
     <Compile Include="Helpers\FeatureHelper.cs" />
     <Compile Include="HtmlTags\Extensions\AnchorTag.cs" />
+    <Compile Include="HtmlTags\Extensions\TimeTag.cs" />
     <Compile Include="HtmlTags\Foundation\Foundation3.cs" />
     <Compile Include="HtmlTags\Extensions\ImageTag.cs" />
     <Compile Include="Helpers\PhotoGalleryHelper.cs" />
@@ -207,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\custom.css" />
+    <Content Include="Content\EventCalendar.css" />
     <Content Include="Content\flex\demo.css" />
     <Content Include="Content\elastislide.css" />
     <Content Include="Content\flex\flexslider.css" />
@@ -388,6 +393,7 @@
     <Content Include="Scripts\jquery.elastislide.js" />
     <Content Include="Scripts\flex\jquery.flexslider-min.js" />
     <Content Include="Scripts\flex\jquery.flexslider.js" />
+    <Content Include="Scripts\jquery.equalheights.js" />
     <Content Include="Scripts\jquery.mousewheel.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
@@ -503,10 +509,11 @@
     <Content Include="Views\Shared\_Foundation.cshtml" />
     <Content Include="Views\Home\Foundation_Index.cshtml" />
     <Content Include="Views\Home\featured.cshtml" />
+    <Content Include="Views\Home\EventsMock.cshtml" />
+    <Content Include="Views\Home\Events.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,0 +1,38 @@
+﻿@using System.Globalization
+@using PhotoGallery.Helpers
+@{
+    ViewBag.Title = "Events";
+}
+@section scripts{
+    <link href="@Url.Content("~/Content/EventCalendar.css")" rel="stylesheet">
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.equalheights.js")"></script>
+    <script type="text/javascript">
+
+        $(window).load(function () {
+            $(".day").equalHeights();
+        });
+
+    </script>
+}
+
+@{
+    //mock list of events
+    //mock this month and this year, and create events on 3, 7, 12,18, 25
+    int year = DateTime.Now.Year;
+    int month = DateTime.Now.Month;
+    
+    var events = new List<Event>
+        {
+            new Event("Awesome party!", "this is an event that you can't miss", "Who are we kidding, it's going to be lame", new DateTime(year, month, 3, 14,0,0), "Your mom's house", new DateTime(year, month, 3, 20, 0,0), null ),
+            new Event("Awesome party!", "this is an event that you can't miss", "Who are we kidding, it's going to be lame", new DateTime(year, month, 7, 14,0,0), "Your mom's house", new DateTime(year, month, 7, 20, 0,0), null ),
+            new Event("Awesome party!", "this is an event that you can't miss", "Who are we kidding, it's going to be lame", new DateTime(year, month, 12, 14,0,0), "Your mom's house", new DateTime(year, month, 12, 20, 0,0), null ),
+            new Event("Awesome party!", "this is an event that you can't miss", "Who are we kidding, it's going to be lame", new DateTime(year, month, 12, 14,0,0), "Your mom's house", new DateTime(year, month, 12, 20, 0,0), null ),
+            new Event("Awesome party!", "this is an event that you can't miss", "Who are we kidding, it's going to be lame", new DateTime(year, month, 18, 14,0,0), "Your mom's house", new DateTime(year, month, 18, 20, 0,0), null ),
+            new Event("Awesome party!", "this is an event that you can't miss", "Who are we kidding, it's going to be lame", new DateTime(year, month, 25, 14,0,0), "Your mom's house", new DateTime(year, month, 25, 20, 0,0), null ),
+        };
+    //create them
+}
+
+
+<h2>Events</h2>
+@Html.EventCalendar(events)

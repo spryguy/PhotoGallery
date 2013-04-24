@@ -1,4 +1,6 @@
-﻿namespace HtmlTags.Extensions
+﻿using PhotoGallery.HtmlTags.Extensions;
+
+namespace HtmlTags.Extensions
 {
     public static class Tags
     {
@@ -45,6 +47,30 @@
         public static HtmlTag Image
         {
             get { return new ImageTag(); }
+        }
+
+        public static HtmlTag Time
+        {
+            get { return new TimeTag(); }
+        }
+
+        public static HtmlTag Article
+        {
+            get { return new HtmlTag("article"); }
+        }
+        public static HtmlTag Header
+        {
+            get { return new HtmlTag("header"); }
+        }
+
+        public static HtmlTag Span
+        {
+            get { return new HtmlTag("span"); }
+        }
+
+        public static HtmlTag Address
+        {
+            get { return new HtmlTag("address"); }
         }
     }
 }

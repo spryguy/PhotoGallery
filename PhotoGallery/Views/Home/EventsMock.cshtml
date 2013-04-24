@@ -1,0 +1,232 @@
+﻿@using System.Globalization
+@{
+    ViewBag.Title = "Events";
+}
+@section scripts{
+    <link href="@Url.Content("~/Content/EventCalendar.css")" rel="stylesheet">
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.equalheights.js")"></script>
+    <script type="text/javascript">
+
+        $(window).load(function () {
+            $(".day").equalHeights();
+        });
+
+    </script>
+    <style type="text/css">
+        
+        
+    </style>
+}
+<h2>Events</h2>
+<div class="row">
+    <div class="calendar">
+        <ul class="month-browser">
+            <li class="calendar_nav"><a href="/calendar/2013-03/">&laquo;  @DateTime.Now.AddMonths(-1).ToString("MMMM")</a></li>
+            <li id="current-month">
+                <time datetime="@DateTime.Now.ToShortDateString()">@DateTime.Now.ToString("MMMM yyyy")</time>
+            </li>
+            <li class="calendar_nav"><a href="/calendar/2013-05/">@DateTime.Now.AddMonths(1).ToString("MMMM")  &raquo;</a></li>
+        </ul>
+        <ul class="weekdays">
+            @{
+                foreach (var day in Enum.GetNames(typeof(DayOfWeek)))
+                {
+                <li>@day</li>
+                }
+            }
+
+        </ul>
+
+        <ul class="month">
+            <li class="filler day">
+                <time datetime="2013-05-03"><span class="day-name">Wed,</span> <span class="month-name">Apr </span>31</time>
+            </li>
+            <li class="empty day">
+                <time datetime="2013-05-03"><span class="day-name">Wed,</span> <span class="month-name">Apr </span>1</time>
+            </li>
+            <li class="empty day">
+                <time datetime="2013-05-03"><span class="day-name">Wed,</span> <span class="month-name">Apr </span>2</time>
+                gobbledy gook text
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Wed,</span> <span class="month-name">Apr</span> 3</div>
+            </li>
+            <li class="day">
+                <time datetime="2013-05-03"><span class="day-name">Thurs,</span> <span class="month-name">Apr </span>4</time>
+                <article>
+                    <header><a href="#" class="event-title">Some Rad Event</a></header>
+                    <time datetime="2013-05-03" class="event-time">8:00 pm</time>
+                    <address>
+                        Harley Davidson Museum<br />
+                        444-4444
+                    </address>
+                    <div class="event-text">Blah blah blah, harley</div>
+                </article>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Fri,</span> <span class="month-name">Apr</span> 5</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Sat,</span> <span class="month-name">Apr</span> 6</div>
+
+            </li>
+
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Sun,</span> <span class="month-name">Apr</span> 7</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Mon,</span> <span class="month-name">Apr</span> 8</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Tue,</span> <span class="month-name">Apr</span> 9</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Wed,</span> <span class="month-name">Apr</span> 10</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Thu,</span> <span class="month-name">Apr</span> 11</div>
+
+            </li>
+            <li class="day">
+                <time datetime="2013-05-03"><span class="day-name">Fri,</span> <span class="month-name">Apr </span>12</time>
+                <article>
+                    <header><a href="#" class="event-title">Some Rad Event</a></header>
+                    <time datetime="2013-05-03" class="event-time">8:00 pm</time>
+                    <address>
+                        Harley Davidson Museum<br />
+                        444-4444
+                    </address>
+                    <div class="event-text">Blah blah blah, harley</div>
+                </article>
+                
+
+            </li>
+            <li class="day">
+                <time datetime="2013-05-03"><span class="day-name">Sat,</span> <span class="month-name">Apr </span>13</time>
+                <article>
+                    <header><a href="#" class="event-title">Some Rad Event</a></header>
+                    <time datetime="2013-05-03" class="event-time">8:00 pm</time>
+                    <address>
+                        Harley Davidson Museum<br />
+                        444-4444
+                    </address>
+                    <div class="event-text">Blah blah blah, harley</div>
+                </article>
+                <article>
+                    <header><a href="#" class="event-title">Some Rad Event</a></header>
+                    <time datetime="2013-05-03" class="event-time">8:00 pm</time>
+                    <address>
+                        Harley Davidson Museum<br />
+                        444-4444
+                    </address>
+                    <div class="event-text">Blah blah blah, harley</div>
+                </article>
+                
+
+            </li>
+
+            <li class="day">
+                <time datetime="2013-05-03"><span class="day-name">Sun,</span> <span class="month-name">Apr </span>14</time>
+                <article>
+                    <header><a href="#" class="event-title">Some Rad Event</a></header>
+                    <time datetime="2013-05-03" class="event-time">8:00 pm</time>
+                    <address>
+                        Harley Davidson Museum<br />
+                        444-4444
+                    </address>
+                    <div class="event-text">Blah blah blah, harley</div>
+                </article>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Mon,</span> <span class="month-name">Apr</span> 15</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Tue,</span> <span class="month-name">Apr</span> 16</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Wed,</span> <span class="month-name">Apr</span> 17</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Thu,</span> <span class="month-name">Apr</span> 18</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Fri,</span> <span class="month-name">Apr</span> 19</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Sat,</span> <span class="month-name">Apr</span> 20</div>
+
+            </li>
+
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Sun,</span> <span class="month-name">Apr</span> 21</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Mon,</span> <span class="month-name">Apr</span> 22</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Tue,</span> <span class="month-name">Apr</span> 23</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Wed,</span> <span class="month-name">Apr</span> 24</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Thu,</span> <span class="month-name">Apr</span> 25</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Fri,</span> <span class="month-name">Apr</span> 26</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Sat,</span> <span class="month-name">Apr</span> 27</div>
+
+            </li>
+
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Sun,</span> <span class="month-name">Apr</span> 28</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Mon,</span> <span class="month-name">Apr</span> 29</div>
+
+            </li>
+            <li class="empty day">
+                <div class="date day_cell"><span class="day-name">Tue,</span> <span class="month-name">Apr</span> 30</div>
+
+            </li>
+            <li class="filler day">
+                <div class="date day_cell"><span class="day-name">Wed,</span> <span class="month-name">May</span> 1</div>
+
+            </li>
+            <li class="filler day">
+                <div class="date day_cell"><span class="day-name">Thu,</span> <span class="month-name">May</span> 2</div>
+
+            </li>
+            <li class="filler day">
+                <div class="date day_cell"><span class="day-name">Fri,</span> <span class="month-name">May</span> 3</div>
+
+            </li>
+            <li class="filler day">
+                <div class="date day_cell"><span class="day-name">Sat,</span> <span class="month-name">May</span> 4</div>
+
+            </li>
+
+        </ul>
+    </div>
+</div>
